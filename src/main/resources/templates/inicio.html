@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>PetShop</title>
+        <!--Ícone da página-->
+        <link rel="shortcut icon" href="/imagens/logo.png" />
+        <!--Css do bootstrap-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous" />
+        <!--Estilos da página-->
+        <link rel="stylesheet" href="/css/inicial.css" />
+        <link rel="stylesheet" href="/css/principal.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" th:href="@{/}">
+                PetShop
+                <img src="/imagens/logo.png" alt="logo" width="30px" />
+            </a>
+
+            <div class="subMenu">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-light" th:href="@{/}">Inicio</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-light" th:href="@{/ajuda}">Ajuda</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="centro">
+                <div class="card pet" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Pets</h5>
+                        <p class="card-text">Gerenciar pets cadastrados no sistema.</p>
+                        <a th:href="@{/pet/listar}" class="btn btn-light btn-lg">Gerenciar Pets 🐶</a>
+                    </div>
+                </div>
+
+                <div class="card produto" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title">Produtos</h5>
+                        <p class="card-text">Gerenciar produtos cadastrados no sistema.</p>
+                        <a th:href="@{/produto/listar}" class="btn btn-light btn-lg">Gerenciar Produtos 🦴</a>
+                    </div>
+                </div>
+
+                <footer class="text-center text-lg-start footer fixed-bottom">
+                    <div class="text-center p-3">
+                        &copy; PetShop 2021
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <!--Script do bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    </body>
+</html>

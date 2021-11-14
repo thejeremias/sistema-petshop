@@ -1,0 +1,14 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+.navbar-brand{
+    margin-left: 25px;
+}
+
+.subMenu{
+    text-decoration: none;
+    color: white;
+    margin-left: 70%;
+}
