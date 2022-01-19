@@ -15,15 +15,10 @@ A aplicação consiste em dois CRUDs: um para os pets e o outro para os produtos
 
 ![Web 3](https://i.ibb.co/Rzgdhpk/crud-estoque.png)
 
-
-## Modelo conceitual
-![Modelo Conceitual]()
-
 # Tecnologias utilizadas
 ## Back end
 - Java
 - Spring Boot
-- JPA / Hibernate
 - Maven
 
 ## Front end
@@ -33,7 +28,6 @@ A aplicação consiste em dois CRUDs: um para os pets e o outro para os produtos
 
 ## Implantação em produção
 - Back end: Heroku
-- Banco de dados: PostgreSQL
 
 # Como executar o projeto
 Pré-requisitos: Java 11
