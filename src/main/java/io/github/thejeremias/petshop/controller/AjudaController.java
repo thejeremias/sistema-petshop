@@ -1,4 +1,4 @@
-package br.edu.ifrn.petshop.controller;
+package io.github.thejeremias.petshop.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

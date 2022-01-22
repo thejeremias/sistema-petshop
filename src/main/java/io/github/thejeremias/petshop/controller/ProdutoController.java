@@ -1,4 +1,4 @@
-package br.edu.ifrn.petshop.controller;
+package io.github.thejeremias.petshop.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import br.edu.ifrn.petshop.dominio.Produto;
+
+import io.github.thejeremias.petshop.dominio.Produto;
 
 @RequestMapping("/produto")
 @Controller
@@ -37,10 +38,10 @@ public class ProdutoController {
 				return "produto/editar";
 			}
 		}  
-	    Integer id = (Integer) sessao.getAttribute("id");
+	    Long id = (Long) sessao.getAttribute("id");
 	    List<Produto> produtosCadastrados = (List<Produto>) sessao.getAttribute("produtosCadastrados");
 		if (id == null) {
-			id = 1;
+			id = 1L;
 		}
 		if (produtosCadastrados == null) {
 			produtosCadastrados = new ArrayList<>();
@@ -80,7 +81,7 @@ public class ProdutoController {
 		
 	@SuppressWarnings("unchecked")
 	@GetMapping("/editar/{id}")
-	public String editar(@PathVariable("id") Integer id, ModelMap model, HttpSession sessao) {
+	public String editar(@PathVariable("id") Long id, ModelMap model, HttpSession sessao) {
 		List<Produto> produtosCadastrados = (List<Produto>) sessao.getAttribute("produtosCadastrados");
 		for (Produto produto : produtosCadastrados) {
 			if (produto != null) {
@@ -95,7 +96,7 @@ public class ProdutoController {
 
 	@SuppressWarnings("unchecked")
 	@GetMapping("/deletar/{id}")
-	public String deletar(@PathVariable("id") Integer id, HttpSession sessao, RedirectAttributes attr) {
+	public String deletar(@PathVariable("id") Long id, HttpSession sessao, RedirectAttributes attr) {
 		List<Produto> produtosCadastrados = (List<Produto>) sessao.getAttribute("produtosCadastrados");
 		Produto p = new Produto();
 		p.setId(id);

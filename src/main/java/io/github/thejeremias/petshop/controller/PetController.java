@@ -1,4 +1,4 @@
-package br.edu.ifrn.petshop.controller;
+package io.github.thejeremias.petshop.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import br.edu.ifrn.petshop.dominio.Pet;
+
+import io.github.thejeremias.petshop.dominio.Pet;
 
 @RequestMapping("/pet")
 @Controller
@@ -37,10 +38,10 @@ public class PetController {
 				return "pet/editar";
 			}
 		}
-	    Integer id = (Integer) sessao.getAttribute("id");
+	    Long id = (Long) sessao.getAttribute("id");
 	    List<Pet> petsCadastrados = (List<Pet>) sessao.getAttribute("petsCadastrados");
 		if (id == null) {
-			id = 1;
+			id = 1L;
 		}
 		if (petsCadastrados == null) {
 			petsCadastrados = new ArrayList<>();
@@ -80,7 +81,7 @@ public class PetController {
 	
 	@SuppressWarnings("unchecked")
 	@GetMapping("/editar/{id}")
-	public String editar (@PathVariable("id") Integer id, ModelMap model, HttpSession sessao) {
+	public String editar (@PathVariable("id") Long id, ModelMap model, HttpSession sessao) {
 		List<Pet> petsCadastrados = (List<Pet>) sessao.getAttribute("petsCadastrados");
 		for (Pet pet : petsCadastrados) {
 			if (pet != null) {
@@ -96,7 +97,7 @@ public class PetController {
 	@SuppressWarnings("unchecked")
 	@GetMapping("/deletar/{id}")
 	public String deletar (
-			@PathVariable("id") Integer id, HttpSession sessao, RedirectAttributes attr
+			@PathVariable("id") Long id, HttpSession sessao, RedirectAttributes attr
 			) {
 		List<Pet> petsCadastrados = (List<Pet>) sessao.getAttribute("petsCadastrados");
 		Pet p = new Pet();

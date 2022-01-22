@@ -1,4 +1,4 @@
-package br.edu.ifrn.petshop;
+package io.github.thejeremias.petshop;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
